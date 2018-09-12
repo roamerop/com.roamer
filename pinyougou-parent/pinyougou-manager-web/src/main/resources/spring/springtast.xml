@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	
+	xmlns:task="http://www.springframework.org/schema/task"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+	
+	<!--将定时类加入到spring容器中  -->
+	<bean id="myCron" class="com.pinyougou.manager.controller.MyCron" />
+	<!--注入定时类,配置定时时间  -->
+	<task:scheduled-tasks>  
+		<task:scheduled ref="myCron" method="cron" cron="0 0 10,14,16 * * ?" />
+	</task:scheduled-tasks>
+</beans>

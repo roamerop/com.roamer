@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	margin: o;
+}
+
+canvas {
+	background: pink;
+	width: 450px;
+	height: 450px;
+	margin: 100px; auto;
+	display: block;
+	border: black solid;
+}
+</style>
+</head>
+<body>
+	<canvas id="div01"></canvas>
+	<canvas id="div02" ></canvas>
+	<script type="text/javascript">
+		var canEle = document.getElementById("div01");
+		//权限
+		var ctx = canEle.getContext("2d");
+		for (var x = 1; x < 30; x++) {
+			ctx.moveTo(15*x, 0);
+			ctx.lineTo(15*x, 450);
+			ctx.stroke();
+			ctx.moveTo(0, 15*x);
+			ctx.lineTo(450, 15*x);
+			ctx.stroke();
+		}
+		
+		var canEle02 = document.getElementById("div02");
+		//权限
+		var ctx02 = canEle02.getContext("2d")
+		ctx02.moveTo(0,0);
+		ctx02.lineTo(450,450);
+		ctx02.stroke();
+		
+	</script>
+
+</body>
+</html>
